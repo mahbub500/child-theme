@@ -21,7 +21,7 @@ $query = new WP_Query([
 
 <!-- Begin Site Title
 ================================================== -->
-<div class="container">
+<!-- <div class="container"> -->
 <!-- End Site Title
 ================================================== -->
 
