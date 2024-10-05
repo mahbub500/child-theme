@@ -60,7 +60,7 @@ $query = new WP_Query([
                         <div class="metafooter">
                             <div class="wrapfooter">
                                 <span class="meta-footer-thumb">
-                                <a href="<?php esc_url( $author_avatar ) ?>"><img class="author-thumb" src="<?php esc_url( $author_avatar ) ?>" alt="<?php echo get_the_author() ?>"></a>
+                                <a href="<?php echo esc_url( $author_avatar ) ?>"><img class="author-thumb" src="<?php echo esc_url( $author_avatar ) ?>" alt="<?php echo get_the_author() ?>"></a>
                                 </span>
                                 <span class="author-meta">
                                 <span class="post-name"><a href="<?php esc_url( $author_avatar ) ?>"><?php echo get_the_author(); ?></a></span><br/>
