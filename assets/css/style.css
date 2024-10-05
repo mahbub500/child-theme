@@ -5,6 +5,14 @@ Version:1.0.1
 License: https://www.wowthemes.net/freebies-license/
 */
 
+.main-header-bar-navigation a {
+	color: unset;
+}
+
+.main-header-bar-navigation a:hover {
+	color: unset;
+}
+
 section {
 	margin-bottom:20px;
 }
