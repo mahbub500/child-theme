@@ -39,41 +39,62 @@ $query = new WP_Query([
 
 <div class="container">
     <div class="row justify-content-md-center">
+
+        <?php 
+            if ( $query->have_posts() ) {
+            while ( $query->have_posts() ) {
+                $query->the_post(); 
+            $word_count = str_word_count( strip_tags( get_the_content() ) );
+            $reading_time = ceil( $word_count / 200 );
+
+            $author_email = get_the_author_meta('user_email'); 
+            $author_avatar = get_avatar_url( $author_email, ['size' => '96'] );
+         ?>
          
       
         <div class="col-10 pb-4 mb-4 " style="border-bottom: 1px solid #e7e7e7;" >
             <article class="type-post entry has-post-thumbnail">
             <header class="entry-header">
                 <h2 class="entry-title">
-                    <a class="entry-title-link custom-hover-effect" rel="bookmark" href="#" >
-                        How to Redesign a WordPress Website (Beginner’s Guide)
+                    <a class="entry-title-link custom-hover-effect" rel="bookmark" href="<?php echo get_permalink(); ?>" >
+                        <?php echo get_the_title(); ?>
                     </a>
                 </h2>
                 <p class="entry-meta">
-                    By <a href="https://www.wpbeginner.com/author/wpbeginner/" >Editorial Staff</a> |
-               
+                    By <a href="<?php echo get_permalink(); ?>" ><?php echo get_the_author() ?></a>
                 </p>
             </header>
 
             <div class="entry-summary">
-                <a class="entry-image-link" href="https://www.wpbeginner.com/beginners-guide/how-to-redesign-a-wordpress-website-beginners-guide/" aria-hidden="true" tabindex="-1">
+                <a class="entry-image-link" href="<?php echo get_permalink(); ?>" aria-hidden="true" tabindex="-1">
                     <img width="180" height="180" 
-                         src="https://www.wpbeginner.com/wp-content/uploads/2024/09/redesign-a-wordpress-website-thumbnail-180x180.png" 
+                         src="<?php echo get_the_post_thumbnail_url( get_the_ID(), 'medium' ); ?>" 
                          class="alignleft post-image entry-image entered lazyloaded" 
                          alt="How to Redesign a WordPress Website" 
                          decoding="async"
                          srcset="" 
                          sizes="(max-width: 180px) 100vw, 180px" />
                 </a>
-                <p>
-                    Is your WordPress site underperforming? Dropping traffic, low conversion rates, poor mobile experience, or slow loading times are clear signs it’s time for a redesign. But tackling a redesign can be daunting, as you might worry about losing SEO rankings. At WPBeginner, we’ve redesigned our…
+                <p><?php echo wp_trim_words(get_the_content(), 40, '...'); ?>
+
                     <strong>
-                        <a href="https://www.wpbeginner.com/beginners-guide/how-to-redesign-a-wordpress-website-beginners-guide/">Read More »</a>
+                        <a href="<?php echo get_permalink(); ?>">Read More »</a>
                     </strong>
                 </p>
             </div>
         </article>
         </div>
+
+         <?php 
+
+           }
+
+        wp_reset_postdata();
+    } else {
+        echo 'No posts found';
+    }
+
+       ?> 
         
     </div>
     

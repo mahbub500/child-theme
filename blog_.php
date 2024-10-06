@@ -68,16 +68,7 @@ $query = new WP_Query([
         </div>
         <!-- end post -->
 
-      <?php 
-
-           }
-
-        wp_reset_postdata();
-    } else {
-        echo 'No posts found';
-    }
-
-       ?> 
+     
 
 
       
