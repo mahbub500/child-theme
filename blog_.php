@@ -24,6 +24,8 @@ $query = new WP_Query([
     </div>
     <div class="card-columns listfeaturedtag">
 
+
+
      <?php 
         if ( $query->have_posts() ) {
         while ( $query->have_posts() ) {

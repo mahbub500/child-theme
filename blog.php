@@ -17,8 +17,9 @@ $query = new WP_Query([
 
 
 
-<div class="container">
+<div class="container bg-color" >
     <div class="row justify-content-md-center">
+        <header class="archive-description taxonomy-archive-description taxonomy-description mt-4 ct-border"><h1 class="archive-title">Discover Web Wisdom</h1></header>
 
         <?php 
             if ( $query->have_posts() ) {
@@ -32,7 +33,7 @@ $query = new WP_Query([
          ?>
          
       
-        <div class="col-10 pb-4 mb-4 " style="border-bottom: 1px solid #e7e7e7;" >
+        <div class="col-10 pb-4 mb-4 ct-border "  >
             <article class="type-post entry has-post-thumbnail">
             <header class="entry-header">
                 <h2 class="entry-title">

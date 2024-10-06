@@ -1,6 +1,22 @@
 
+.main-header-bar-navigation a {
+	color: unset;
+}
+
+.main-header-bar-navigation a:hover {
+	color: unset;
+}
+
+
 .custom-hover-effect:hover, .entry-meta a {
 	color: #ff6200;
 	text-decoration: none;
 }
+.bg-color{
+	background-color: #fff;
+}
 
+.ct-border{
+
+	border-bottom: 1px solid #e7e7e7;
+}
