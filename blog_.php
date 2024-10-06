@@ -1,7 +1,5 @@
 <?php
-/*
-Template Name: Blog list
-*/
+
 
 get_header(); 
 

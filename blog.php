@@ -17,26 +17,6 @@ $query = new WP_Query([
 
 
 
-
-<?php
-/*
-Template Name: Blog list
-*/
-
-get_header(); 
-
-
-$query = new WP_Query([
-    'post_type'      => 'post',
-    'posts_per_page' => 5
-]);
-
-
-
-?>
-
-
-
 <div class="container">
     <div class="row justify-content-md-center">
 
